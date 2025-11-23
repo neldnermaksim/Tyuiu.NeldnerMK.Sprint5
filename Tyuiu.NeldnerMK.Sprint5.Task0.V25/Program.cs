@@ -21,19 +21,46 @@ namespace Tyuiu.NeldnerMK.Sprint5.Task0.V25
             Console.WriteLine("* УСЛОВИЕ:                                                                 *");
             Console.WriteLine("* Написать программу ");
             Console.WriteLine("****************************************************************************");
-            Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ: 753159864 ");
+            Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ: Math.Round((Math.Pow(3 * x, 4) + 1) / Math.Pow(x, 3), 2)");
             Console.WriteLine();
 
             DataService ds = new DataService();
+
+
+
+            string str = "753159864";
+
+            int n = 3;
+            int m = 3;
+
+
+            Console.WriteLine();
+
+            int index = 0;
+
+            Console.WriteLine("\n Массив:");
+
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < m; j++)
+                {
+                    Console.Write($"{str[index]} \t");
+                    index++;
+                }
+                Console.WriteLine();
+            }
+
+
+
+
+
 
             Console.WriteLine("****************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                               *");
             Console.WriteLine("****************************************************************************");
 
-
-            string res = ds.SaveToFileTextData(3);
-            Console.WriteLine("Файл " + res);
-            Console.WriteLine("Создан");
+            int res = ds.Calculate(n, m, str);
+            Console.WriteLine(res);
 
         }
     }
