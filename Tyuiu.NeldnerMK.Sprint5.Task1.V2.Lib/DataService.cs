@@ -25,11 +25,20 @@ namespace Tyuiu.NeldnerMK.Sprint5.Task1.V2.Lib
             string strv;
             for (int x = startValue; x <= stopValue; x++)
             {
-                double result = 2 * x + 3 * Math.Pow(x, 2) + 4;
-                if (double.IsInfinity(result) || double.IsNaN(result))
+
+                double denominator = Math.Cos(x) - 2 * x;
+                double result;
+
+
+                if (Math.Abs(denominator) < 0.0000001)
                 {
                     result = 0;
                 }
+                else
+                {
+                    result = (2 * x - 3) / denominator + 5 * x - 6;
+                }
+
                 y = Math.Round(result, 2);
                 strv = Convert.ToString(y);
 
